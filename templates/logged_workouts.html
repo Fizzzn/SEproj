@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/logged_workout.css">
+    <title>Fitness Tracker</title>
+</head>
+<body>
+    <div class="menu-buttons">
+        <button class="button1" onclick="window.location.href='/'">Logout</button>
+        <button class="button2" onclick="window.location.href='/workout_form'">New</button>
+        <button class="button3" onclick="window.location.href='/logged_workouts'">View Logs</button>
+        <button class="button4" onclick="window.location.href='/About_Us'">About Us</button>
+    </div>
+
+    <br>
+
+    <div class="workout-data">
+        {% for date, workouts in workouts_per_date.items() %}
+            <h2>{{ date }}</h2>
+            <div class="workouts-for-date">
+                {% for workout in workouts %}
+                    <div class="workout-entry">
+                        <p>Log {{ workout.id }}</p>
+                        <p>Muscle Group: {{ workout.muscle_group }}</p>
+                        <p>Exercise: {{ workout.exercise }}</p>
+                        <p>Sets: {{ workout.sets }}</p>
+                        <p>Reps: {{ workout.reps }}</p>
+                        <div class="button-group">
+                            <form method="POST" action="/delete/{{ workout.id }}">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

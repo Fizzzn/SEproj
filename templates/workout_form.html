@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/workout_form.css">
+    <title>Fitness Tracker</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Fitness Tracker</h2>
+        <div class="menu-buttons">
+            <button class="button1" onclick="window.location.href='/'">Logout</button>
+            <button class="button2" onclick="window.location.href='/workout_form'">New</button>
+            <button class="button3" onclick="window.location.href='/logged_workouts'">View Logs</button>
+            <button class="button4" onclick="window.location.href='/About_Us'">About Us</button>
+        </div>
+    </div>
+
+    <div class="Workout-form">
+        <form method="POST" action="/saved_workout">
+            <input type="date" id="workout_date" name="workout_date" required>
+            <input type="text" name="muscle_group" placeholder="Muscle Group" >
+            <input type="text" name="exercise" placeholder="Exercise">
+            <input type="number" name="sets" placeholder="Sets" min=0 max=99 >
+            <input type="number" name="reps" placeholder="Reps" min=0 max=99 >
+            <button type="submit">save</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="static/login_signup.css">
+    <title>Fitness Tracker</title>
+</head>
+<body>
+    <h2>Sign Up</h2>
+    <div class="signup-flash">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    </div>
+    <form method="post" action="{{ url_for('signup') }}">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        
+        <label for="confirm_password">Confirm Password:</label><br>
+        <input type="password" id="confirm_password" name="confirm_password"><br><br>
+        
+        <input type="submit" value="Sign Up">
+    </form>
+
+    
+    <div class="login">
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+    </div>
+    
+</body>
+</html>
