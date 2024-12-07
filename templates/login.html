@@ -7,15 +7,22 @@
 <body>
     <div class="container"> 
         <h2>Login</h2>
+
+        <!-- Flash message container -->
         <div class="login-flash">
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
-                    {% for message in messages %}
-                        {{ message }}
-                    {% endfor %}
+                    <div class="welcome">Welcome to Fitness Tracker!</div>
+                    <ul>
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
                 {% endif %}
             {% endwith %}
         </div>
+
+        <!-- Login form -->
         <div class="users">
             <form method="post" action="{{ url_for('login') }}">
                 <label for="username">Username:</label><br>
@@ -25,10 +32,11 @@
                 <input type="submit" value="Login">
             </form>
         </div>
+
+        <!-- Signup link -->
         <div class="signup">
             <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign Up</a></p>
         </div>
     </div>
-    
 </body>
 </html>
