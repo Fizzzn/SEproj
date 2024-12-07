@@ -1,61 +1,140 @@
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-image: url('/static/SEprojpics/minimalistgym.jpeg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; 
-    color: rgb(0, 110, 255); }
+    background-attachment: fixed;
+    color: rgb(0, 110, 255); 
+    line-height: 1.6; 
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); 
+}
+
 
 .menu-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 15px; 
     padding: 20px;
 }
 
+/* Button style */
 .menu-buttons button {
     background-color: rgb(0, 110, 255);
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px; 
     border: none;
-    border-radius: 12px;
-    transition: background-color 0.3s ease;
+    border-radius: 15px; 
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* Hover effect on buttons */
 .menu-buttons button:hover {
-    opacity: 0.8;
+    background-color: #0056b3; 
+    transform: translateY(-2px); 
+    opacity: 0.9; 
 }
 
+/* Styling workout entry form */
 .workout-entry {
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
+    border: 1px solid #ccc; 
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.8); 
 }
 
+/* Text inside workout entry */
 .workout-entry p {
-    margin: 5px 0;
+    margin: 10px 0; 
+    font-size: 1.1rem; 
 }
 
+/* Button group for submitting or other actions */
 .button-group {
     display: flex;
-    justify-content: left;
+    justify-content: center; 
+    gap: 15px;
     margin-top: 20px;
 }
 
+/* Button group button styles */
 .button-group button {
-    padding: 10px 20px;
-    margin: 0 5px;
+    padding: 12px 25px; 
     border: none;
-    border-radius: 5px;
-    background-color: #007bff; /* Change to match your button color */
-    color: #fff;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Add a smooth hover transition */
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* Hover effect for button group buttons */
 .button-group button:hover {
-    background-color: #0056b3; /* Change to match hover color */
+    background-color: #0056b3; 
+    transform: translateY(-2px); 
+    opacity: 0.9; 
+}
+
+/* Style for individual buttons */
+.button-group button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); 
+}
+
+/* Additional styling for input fields */
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff; 
+    background-color: #fff; 
+}
+
+/* Styling for the submit button */
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 12px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+    opacity: 0.9; 
+}
+
+/* Adding spacing for footer or additional text */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #fff;
 }
